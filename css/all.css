@@ -1,0 +1,112 @@
+.navbar-fixed-top {
+  border: 0;
+}
+
+.my-navbar{
+	font-size: 18px;
+	background-color: #7B77FF;
+}
+
+.m-beforelg,.m-afterlg{
+	display: none;
+	float: right;
+	margin: 0 10px;
+	font-size: 15px;
+	line-height: 3.3;
+}
+.m-beforelg .z-login{
+	color: #ccc;
+	cursor: pointer;
+}
+.m-beforelg .z-register{
+	color: #6ED6D9;
+}
+
+.m-afterlg{
+	display: none;
+	color: #F7EB76;
+}
+.m-afterlg #z-lgoff{
+	color: #666;
+	cursor: pointer;
+}
+.m-afterlg #z-lgoff:hover{
+	text-decoration: none;
+}
+.ali1{
+	color: #f68686;
+}
+.ali{
+	color: #ffffff;
+	font-size: 16px;
+}
+.ali:hover{
+	cursor: pointer;
+}
+.s-modal{
+	width: 400px;
+	margin-left: 100px
+}
+.s-st{
+	float: right;
+	background-color: #ffffff;
+	height: 20px;
+	padding-top: 0;
+}
+.s-tu{
+	color: #aaa;
+    margin-right: 15px;
+}
+
+.g-head .h-head{
+	font-size: 28px;
+	font-family: serif, "Times New Roman", Times;
+}
+
+
+.g-head {
+	margin-top: 30px;
+}
+
+.g-head .h-search{
+	margin-top: 20px;
+}
+
+.g-head .h-search div{
+	display: inline-block;
+	width: 300px;
+}
+
+.h-search .h-super{
+	margin-left: 20px;
+	color: #f68686;
+}
+
+.h-search .h-super:hover{
+	cursor: pointer;
+}
+
+.h-logo{
+	height: 65px;
+}
+.s-s{
+	background-color:  #639FCD;
+	color: #fff;
+}
+.s-s:hover,.s-s:focus{
+	color: #fff;
+}
+.h-title{
+	display: inline-block;
+}
+
+.z-tip{
+	color: #F63B3B;
+	visibility: hidden;
+	/* line-height: 2; */
+	margin: -10px 0 10px 0;
+}
+.f-box .z-detail{
+	padding-left:150px;
+	cursor: pointer;
+}

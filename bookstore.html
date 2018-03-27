@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>个人书店</title>
+	<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/bookstore.css" rel="stylesheet">
+	<link href="css/all.css" rel="stylesheet">
+	<link rel="stylesheet" href="jquery-easyui-1.5/themes/default/easyui.css" type="text/css">
+	<script src="js/jquery.min.js"></script>
+    <script src="jquery-easyui-1.5/jquery.easyui.min.js"></script>
+    <script src="js/jquerySession.js" type="text/javascript"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<!-- <script type="text/javascript" src="js/jquery.validate.min.js" ></script> -->
+  	<script src="js/md5.js"></script>  
+  	<script src="js/basic.js"></script>
+
+</head>
+<body>
+	<nav class="navbar my-navbar navbar-fixed-top"> <!-- 导航栏 -->
+		<div class="container">  <!-- 自适宽度 -->
+			<div id="navbar" class="navbar-collapse collapse">
+				<ul class="nav navbar-nav  navbar-right">
+					<li><a class="ali">首页</a></li>
+            		<li><a class="ali">个人信息</a></li>
+            		<li><a class="ali">个人书店</a></li>
+            		<li><a class="ali">图书出售</a></li>
+          		</ul>
+          		<div class="m-afterlg">
+          			<span id="z-user">sakra</span>
+          			<span id="z-lgoff"> | 注销</span>
+        		</div>
+        		<div class="m-beforelg">
+          			<span class="z-login" href="#login_pop"  data-toggle="modal" data-target="#login_pop">登录 | </span><a href="register.html" class="z-register">注册</a>
+        		</div>
+			</div>
+		</div> 
+	</nav> 
+
+	<div class="modal fade" id="login_pop" style="padding-top: 200px" >
+        <div class="modal-dialog">
+          <div class="modal-content  s-modal">
+             <div class="modal-header">
+             	<span class="glyphicon glyphicon-user"><b>请登录</b></span>
+             		<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+             </div>
+            <div class="modal-body">
+                <div class="z-tip" align="center"></div>
+                <form action="javascript:void(0)" id="lgForm" autocomplete="off">
+                    <div class="form-group" align="center">
+                    <label class="control-lable" align="center">用 户 名:</label>
+                    <div style="display: inline-block;">
+                        <input id="username" type="text" ng-model="name" class="form-control" placeholder="请输入用户名">
+                    </div>
+                	</div>
+                	<div class="form-group" align="center">
+                    	<label class="control-lable" align="center">密&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;码:</label>
+                    	<div style="display: inline-block;">
+                        	<input id="password" type="password" class="form-control" placeholder="请输入密码">
+                    	</div>
+                	</div>                       
+             		<div class="modal-footer">
+                 		<button class="btn" id="btn-login">登录</button>
+                 		<a href="register.html">注册</a>
+             		</div>
+             	</form>
+        		</div>
+      		</div>
+      	</div>
+     </div>
+	<div class="container">
+	<div class="row-fluid g-head">
+		<div class="col-sm-6">
+			<img src="images/logo.png" alt="" class="h-logo"><span class="h-head"> 旧书网 | </span>
+			<h3 class="h-title">个人书店</h3>
+		</div>
+		<div class="col-sm-6  h-search">
+			<i class="glyphicon glyphicon-search s-tu"></i>
+			<div class="form-group">
+				<input type="text" class="form-control" id="" placeholder="输入书名或作者">
+			</div>
+			<button type="submit" class="btn btn-search s-s">搜索</button><a class="h-super">高级搜索</a>
+		</div>
+	</div>
+	<div class="g-boundary"></div>
+	</div>
+	<div class="container">
+	<div class="row">
+		<div class="s-tabs">
+			<a class="s-tab now">出售记录</a>
+			<a class="s-tab">购买记录</a>
+		</div>
+		<div>
+		<table class="table table-bordered">
+			<thead>
+				<tr>
+					<th class="s-table-t">详细书名</th>
+					<th class="s-table-t">作者</th>
+					<th class="s-table-t">出版社</th>
+					<th class="s-table-t">出版年份</th>
+					<th class="s-table-t">类别</th>
+					<th class="s-table-t">原价</th>
+					<th class="s-table-t">品相</th>
+					<th class="s-table-t">售价</th>
+				</tr>
+			</thead>
+			<tbody id="product-list">
+				<tr>
+					<td colspan="8" class="s-tbody-t">
+						<div class="loading" style="background: none; text-align: center;">暂无数据</div>
+					</td>
+				</tr>
+			</tbody>
+			<tfoot>
+				<tr>
+					<td colspan="8">
+						<input class="checkAll" type="checkbox" id="check_all_sec">
+						<label for="check_all_sec"> 全选</label>
+						<a id="btn-delete-product" href="javascript:;" class="btn-gray">删除所选</a>
+					</td>
+				</tr>
+			</tfoot>
+		</table>
+		</div>
+	</div>
+	</div>
+</body>
+</html>

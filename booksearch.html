@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>BookSearch</title>
+	<link rel="stylesheet" href="./css/reset.css">
+	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap-select.css">
+	<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+	<!-- <link rel="stylesheet" href="bootstrap/css/bootstrap-theme.min.css"> -->
+	<link rel="stylesheet" href="Font-Awesome/css/font-awesome.min.css">
+	<link rel="stylesheet" href="./css/mainstyle.css">
+	<link href="css/all.css" rel="stylesheet">
+	<script src="js/jquery.min.js"></script>
+    <script src="jquery-easyui-1.5/jquery.easyui.min.js"></script>
+    <script src="js/jquerySession.js" type="text/javascript"></script>
+	<script src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/jquery.validate.min.js" ></script>
+  	<script src="js/md5.js"></script>
+  	<script src="js/basic.js"></script>
+	<script src="js/jquery-3.1.1.js"></script>
+	<script type="text/javascript" src="bootstrap/js/bootstrap-select.js"></script>
+	<!-- <script src="bootstrap/js/bootstrap.min.js"></script> -->
+
+	<script type="text/javascript">
+	$(window).on('load', function () {
+
+		$('.sh-sltpicker ').selectpicker({
+			noneSelectedText:'请选择'
+		});
+		// $('.sh-sltpicker ').s-sltpicker ('hide');
+	});
+	</script>
+
+</head>
+<body>
+<nav class="navbar my-navbar navbar-fixed-top"> <!-- 导航栏 -->
+		<div class="container">  <!-- 自适宽度 -->
+			<div id="navbar" class="navbar-collapse collapse">
+				<ul class="nav navbar-nav  navbar-right">
+					<!-- <li><a class="navbar-brand ali1"  data-toggle="modal" data-target="#mymodal">登录</a></li>
+					<li><a href="register.html" class="navbar-brand ali1">注册</a></li> -->
+					<li><a class="ali">首页</a></li>
+            		<li><a class="ali">个人信息</a></li>
+            		<li><a class="ali">个人书店</a></li>
+            		<li><a class="ali">图书出售</a></li>
+          		</ul>
+          		<div class="m-afterlg">
+          			<span id="z-user">sakra</span>
+          			<span id="z-lgoff"> | 注销</span>
+        		</div>
+        		<div class="m-beforelg">
+          			<span class="z-login" href="#login_pop"  data-toggle="modal" data-target="#login_pop">登录 | </span><a href="register.html" class="z-register">注册</a>
+        		</div>
+			</div>
+		</div> 
+	</nav> 
+
+	<div class="modal fade" id="login_pop" style="padding-top: 200px" >
+        <div class="modal-dialog">
+          <div class="modal-content  s-modal">
+             <div class="modal-header">
+              <span class="glyphicon glyphicon-user"><b>请登录</b></span>
+                <!-- <button class="btn s-st glyphicon glyphicon-remove" data-dismiss="modal"></button> -->
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+             </div>
+            <div class="modal-body">
+                <div class="z-tip" align="center">提示信息！</div>
+                <form action="javascript:void(0)" id="lgForm" autocomplete="off" enctype="multipart/form-data">
+                    <div class="form-group" align="center">
+                    <label class="control-lable" align="center">用 户 名:</label>
+                    <div style="display: inline-block;">
+                        <input id="username" type="text" ng-model="name" class="form-control" placeholder="请输入用户名">
+                    </div>
+                  </div>
+                  <div class="form-group" align="center">
+                      <label class="control-lable" align="center">密&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;码:</label>
+                      <div style="display: inline-block;">
+                          <input id="password" type="password" class="form-control" placeholder="请输入密码">
+                      </div>
+                  </div>                       
+                <div class="modal-footer">
+                    <button class="btn" id="btn-login">登录</button>
+                    <a href="register.html">注册</a>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+     </div>
+	<!-- head -->
+	<!-- s -->
+	<div class="container">
+	<div class="row-fluid g-head" style="padding-top: 50px;">
+		<div class="col-sm-6">
+			<img src="images/logo.png" alt="" class="h-logo"><span class="h-head"> 旧书网 </span>
+		</div>
+		<div class="col-sm-6  h-search">
+			<i class="glyphicon glyphicon-search s-tu"></i>
+			<div class="form-group">
+				<input type="text" class="form-control" id="" placeholder="输入书名或作者">
+			</div>
+			<button type="submit" class="btn btn-search s-s">搜索</button>
+		</div>
+	</div>
+	<div class="g-boundary"></div>
+</div>
+	
+	<!-- middle -->
+	<div class="container g-search-mid">
+	<div class="row-fluid  col-xs-offset-1">
+		<div class="col-sm-3 m-left">
+			<ul class="list-group">
+				<li class="list-group-item">交易信息</li>
+				<li class="list-group-item"><i class="icon-star"></i><a class="z-left">我的收藏</a></li>
+				<li class="list-group-item"><i class="icon-signin"></i><a class="z-left">我的购买记录</a></li>
+				<li class="list-group-item"><i class="icon-signout"></i><a class="z-left">我的出售记录</a></li>
+			</ul>
+			<ul class="list-group">
+				<li class="list-group-item">账号管理</li>
+				<li class="list-group-item"><i class="icon-user"></i><a class="z-left">个人资料</a></li>
+				<li class="list-group-item"><i class="icon-lock"></i><a class="z-left"> 修改密码</a></li>
+				<li class="list-group-item"><i class="icon-heart"></i><a class="z-left">我的好友</a></li>
+			</ul>
+		</div>
+		<div class="col-sm-7">
+		<!-- 书籍查找 -->
+		<form class="form-horizontal search-info">
+			<fieldset>
+			<div id="s-legend" class="form-head">
+				<legend class="">&nbsp;&nbsp;<i style="color:#fff;" class="icon-search"></i>高级搜索</legend>
+			</div>
+			<div class="form-group">
+				<!-- Text input-->
+				<label class="col-sm-4 control-label" for="input01">关键词：</label>
+				<div class="col-sm-5">
+					<input type="text" placeholder="请输入要查询的关键词" class="form-control">
+					<p class="help-block"></p>
+				</div>
+			</div>
+			<div class="form-group">
+				<!-- Select Basic -->
+				<label class="col-sm-4 control-label" for="sort-slt">书籍类别：</label>
+				<div class="col-sm-4">
+					<select id="sort-slt" class="sh-sltpicker form-control"  multiple data-live-search="true">
+						<option>专业教材</option>
+						<option>计算机网络</option>
+						<option>自然科学</option>
+						<option>体育</option>
+						<option>宗教</option>
+						<option>政治</option>
+						<option>哲学心理</option>
+						<option value="">综合其它</option>
+					</select>
+				</div>
+			</div>
+			<div class="form-group">
+				<!-- Text input-->
+				<label class="col-sm-4 control-label" for="input01">书籍名称：</label>
+				<div class="col-sm-5">
+					<input type="text" placeholder="请输入要查询的书名" class="form-control">
+					<p class="help-block"></p>
+				</div>
+			</div>
+			<div class="form-group">
+				<!-- Text input-->
+				<label class="col-sm-4 control-label" for="input01">书籍作者：</label>
+				<div class="col-sm-5">
+					<input type="text" placeholder="请输入要查询的作者" class="form-control">
+					<p class="help-block">多位作者以“、”隔开</p>
+				</div>
+			</div>
+			<div class="form-group">
+				<!-- Text input-->
+				<label class="col-sm-4 control-label" for="input01">出版社：</label>
+				<div class="col-sm-5">
+					<input type="text" placeholder="请输入要查询的出版社" class="form-control">
+					<p class="help-block"></p>
+				</div>
+			</div>
+			<div class="form-group">
+				<!-- Select Basic -->
+				<label class="col-sm-4 control-label">出版时间：</label>
+				<div class="col-sm-3">
+					<select class="form-control">
+						<option>2017</option>
+						<option>2016</option>
+						<option>2015</option>
+						<option>2014</option>
+						<option>2013</option>
+						<option>2012</option>
+						<option>1996</option>
+						<option></option>
+					</select>
+				</div>
+				<span class="z-hline">—</span>
+				<div class="col-sm-3">
+					<select class="form-control">
+						<option>2017</option>
+						<option>2016</option>
+						<option>2015</option>
+						<option>2014</option>
+						<option>2013</option>
+						<option>2012</option>
+						<option>1996</option>
+						<option></option>
+					</select>
+				</div>
+				<span>年</span>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-4 control-label">价格：</label>
+				<div class="col-sm-2">
+					<input type="text" class="form-control" min="0">
+				</div>
+				<span class="z-hline">—</span>
+				<div class="col-sm-2">
+					<input type="text" class="form-control" min="0">
+				</div>
+				<span>元</span>
+			</div>
+			<div class="form-group">
+				<!-- Text input-->
+				<label class="col-sm-4 control-label" for="input01">品相：</label>
+				<div class="col-sm-2">
+					<input type="number" class="form-control" min="1" max="10">
+				</div>
+				<span class="z-hline">—</span>
+				<div class="col-sm-2">
+					<input type="number" class="form-control" min="1" max="10">
+				</div>
+				<span>品</span>
+			</div>
+			<div class="form-group">
+				<div class="col-sm-offset-4 col-sm-10">
+					<button type="submit" class="btn col-sm-4 btn-spsearch">搜索</button>
+				</div>
+			</div>
+			</fieldset>
+		</form>
+		</div>
+	</div>
+	</div>
+</body>
+</html>

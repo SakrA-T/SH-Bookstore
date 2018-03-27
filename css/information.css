@@ -1,0 +1,25 @@
+body {
+  padding-top: 50px;
+  
+}
+
+.g-boundary{
+	width: 100%;
+	height: 90px;
+	box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
+}
+
+.g-tb{
+	padding-top: 50px;
+}
+.g-tb td{
+	font-size: 14px;
+	/* text-align: center; */
+}
+.bg_color{
+	background-color: #f7fbff;
+	text-align:center; 
+}
+.w_140 {
+    width: 220px;
+}

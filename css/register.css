@@ -1,0 +1,48 @@
+body {
+	padding-top: 50px;
+}
+
+.g-head .h-head{
+	font-size: 28px;
+	font-family: serif, "Times New Roman", Times;
+}
+
+.h-logo{
+	height: 65px;
+}
+.g-head .h-title{
+	display: inline-block;
+}
+.g-boundary{
+	padding-top: 20px;
+	width: 100%;
+	height: 90px;
+	/* border-bottom: 2px solid #ccc; */
+	box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
+}
+.form-control-1 {
+    width:300px;
+    display:inline-block;
+    float: right;
+}
+
+.s-reg{
+	margin: 50px 350px;
+}
+.s-ge{
+	margin-top: 30px;
+}
+
+.s-ge1{
+	text-align: center;
+	margin-top: 40px;
+}
+.s-su{
+	width: 100px;
+	height: 40px;
+	font-size: 18px;
+	border-radius: 4px;
+	border: 1px solid transparent;
+	background-color: #639FCD;
+	color: #ffffff;
+}
